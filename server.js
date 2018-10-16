@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
@@ -22,6 +21,7 @@ Recipes.create(
 Recipes.create(
   'milkshake', ['2 tbsp cocoa', '2 cups vanilla ice cream', '1 cup milk']);
 
+
 app.get('/shopping-list', (req, res) => {
   res.json(ShoppingList.get());
 });
@@ -42,7 +42,18 @@ app.post('/shopping-list', jsonParser, (req, res) => {
   res.status(201).json(item);
 });
 
+app.delete('/shopping-list/:id', (req, res) => {
+  ShoppingList.delete(req.params.id);
+  console.log(`Deleted shopping list item \`${req.params.ID}\``);
+  res.status(204).end();
+});
+
+app.get('/recipes', (req, res) => {
+  res.json(Recipes.get());
+});
+
 app.post('/recipes', jsonParser, (req, res) => {
+ 
   const requiredFields = ['name', 'ingredients'];
   for (let i=0; i<requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -56,10 +67,11 @@ app.post('/recipes', jsonParser, (req, res) => {
   res.status(201).json(item);
 });
 
-
-app.get('/recipes', (req, res) => {
-  res.json(Recipes.get());
-})
+app.delete('/recipes/:id', (req, res) => {
+  Recipes.delete(req.params.id);
+  console.log(`Deleted recipe \`${req.params.id}\``);
+  res.status(204).end();
+});
 
 app.listen(process.env.PORT || 8080, () => {
   console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
