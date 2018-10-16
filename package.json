@@ -1,0 +1,55 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @blackcodemaker Sign out
+16
+1 352 Thinkful-Ed/node-shopping-list-v1
+ Code  Issues 0  Pull requests 1  Projects 0  Wiki  Insights
+node-shopping-list-v1/package.json
+ccc2937  on Nov 15, 2016
+@benjaminEwhite benjaminEwhite updated
+     
+26 lines (25 sloc)  517 Bytes
+{
+  "name": "node-shopping-list-v1",
+  "version": "0.0.1",
+  "description": "Shopping list app to demo 'the modern classic'",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.12.4",
+    "morgan": "^1.7.0",
+    "uuid": "^2.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thinkful-Ed/node-shopping-list-v5"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "license": "MIT"
+}
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
